@@ -52,10 +52,12 @@ public class FlightItem {
 
     @Resolve
     private void onResolved() {
-        tvLabel.setText(flightModel.airportInfo);
-        tvSource.setText(flightModel.departureArrivalCities);
-        tvDate.setText(flightModel.departureArrivalDates);
-        tvDay.setText(flightModel.departureArrivalTimings);
+        tvLabel.setText(flightModel.departureArrivalDates.substring(0, flightModel.departureArrivalDates.length() / 2));
+        tvSource.setText(flightModel.departureArrivalCities.substring(0, flightModel.departureArrivalCities.length() / 2 + 1));
+        tvDestination.setText(flightModel.departureArrivalCities.substring(flightModel.departureArrivalCities.length() / 2 + 1, flightModel.departureArrivalCities.length()));
+        //   tvDate.setText(flightModel.departureArrivalDates);
+        tvJourneyStarttime.setText(flightModel.departureArrivalTimings.substring(0,flightModel.departureArrivalTimings.length()/2+1));
+        tvJourneyEndtime.setText(flightModel.departureArrivalTimings.substring(flightModel.departureArrivalTimings.length()/2+1,flightModel.departureArrivalTimings.length()));
         tvFlightNumber.setText(flightModel.sourceDestinationCode);
     }
 }
