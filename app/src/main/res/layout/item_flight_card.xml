@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.skytreasure.bingflightscraper.model.FlightModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="3dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:drawablePadding="@dimen/dp_16"
+                    android:drawableStart="@drawable/news"
+                    android:padding="@dimen/dp_8"
+                    android:text="Upcoming Trips"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text=""
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_flight"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_below="@+id/label"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/tv_source"
+                    android:src="@drawable/ic_flight_takeoff_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/iv_flight"
+                    android:text=""
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+                <!--Calender-->
+                <FrameLayout
+                    android:id="@+id/fl_calender"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/label"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@color/alpha_border_grey">
+
+                    <TextView
+                        android:id="@+id/tv_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/watermelon"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_2"
+                        android:text="DEC"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="28"
+                        android:textColor="@color/black_two"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:text="Monday" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_journey_stime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_source"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text=""
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_journey_etime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_destination"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/iv_flight"
+                    android:text=""
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_journey_stime"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/green_rec_curve"
+                    android:padding="@dimen/dp_4"
+                    android:text="On Time"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_line_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/tv_status"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/greyish" />
+
+                <TextView
+                    android:id="@+id/tv_pnr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/view_line_1"
+                    android:layout_margin="@dimen/dp_16"
+                    android:text=" " />
+
+                <TextView
+                    android:id="@+id/tv_flightname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_line_1"
+                    android:layout_margin="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/tv_pnr"
+                    android:text=" " />
+
+                <TextView
+                    android:id="@+id/tv_flightnumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_pnr"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</layout>
